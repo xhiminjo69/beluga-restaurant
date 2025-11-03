@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { HiCalendar, HiClock, HiUserGroup, HiCheckCircle } from 'react-icons/hi'
 import { useLanguage } from '../context/LanguageContext'
+import { getAssetUrl } from '../utils/getAssetUrl'
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -84,7 +85,7 @@ const Reservation = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1752155854_3673672030144213989_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1752155854_3673672030144213989_74561928675.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
@@ -362,7 +363,7 @@ const Reservation = () => {
                       {/* Image */}
                       <div className="rounded-2xl overflow-hidden shadow-xl">
                         <img
-                          src="/beluga.restaurant__1750622791_3660811767116332896_74561928675.jpg"
+                          src={getAssetUrl('beluga.restaurant__1750622791_3660811767116332896_74561928675.jpg')}
                           alt="Restaurant Ambiance"
                           className="w-full h-64 object-cover"
                         />

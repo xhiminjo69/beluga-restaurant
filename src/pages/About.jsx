@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../context/LanguageContext'
+import { getAssetUrl } from '../utils/getAssetUrl'
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -30,7 +31,7 @@ const About = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1751389246_3667241255303853794_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1751389246_3667241255303853794_74561928675.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
@@ -156,22 +157,22 @@ const About = () => {
             <FadeInSection delay={0.3}>
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/beluga.restaurant__1752155854_3673672030144213989_74561928675.jpg"
+                  src={getAssetUrl('beluga.restaurant__1752155854_3673672030144213989_74561928675.jpg')}
                   alt="Restaurant View"
                   className="rounded-lg shadow-xl"
                 />
                 <img
-                  src="/beluga.restaurant__1752861423_3679590769368761731_74561928675.jpg"
+                  src={getAssetUrl('beluga.restaurant__1752861423_3679590769368761731_74561928675.jpg')}
                   alt="Dining Area"
                   className="rounded-lg shadow-xl mt-8"
                 />
                 <img
-                  src="/beluga.restaurant__1751531164_3668431747047575215_74561928675.jpg"
+                  src={getAssetUrl('beluga.restaurant__1751531164_3668431747047575215_74561928675.jpg')}
                   alt="Terrace"
                   className="rounded-lg shadow-xl -mt-8"
                 />
                 <img
-                  src="/beluga.restaurant__1750686627_3661347257666133338_74561928675.jpg"
+                  src={getAssetUrl('beluga.restaurant__1750686627_3661347257666133338_74561928675.jpg')}
                   alt="Interior"
                   className="rounded-lg shadow-xl"
                 />

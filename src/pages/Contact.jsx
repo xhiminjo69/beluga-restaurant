@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer'
 import { HiLocationMarker, HiPhone, HiMail, HiClock } from 'react-icons/hi'
 import { FaFacebook, FaInstagram, FaTripadvisor } from 'react-icons/fa'
 import { useLanguage } from '../context/LanguageContext'
+import { getAssetUrl } from '../utils/getAssetUrl'
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -64,7 +65,7 @@ const Contact = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1751531164_3668431747047575215_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1751531164_3668431747047575215_74561928675.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>

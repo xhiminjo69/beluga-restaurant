@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../context/LanguageContext'
+import { getAssetUrl } from '../utils/getAssetUrl'
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -84,7 +85,7 @@ const Menu = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1750454903_3659403422090254919_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1750454903_3659403422090254919_74561928675.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>

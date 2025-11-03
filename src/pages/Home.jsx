@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 import { HiStar } from 'react-icons/hi'
 import { useLanguage } from '../context/LanguageContext'
+import { getAssetUrl } from '../utils/getAssetUrl'
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -62,7 +63,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1748538995_3643331619848936385_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1748538995_3643331619848936385_74561928675.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
@@ -120,7 +121,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 opacity-10 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1751389246_3667241255303723309_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1751389246_3667241255303723309_74561928675.jpg')}')`,
           }}
         ></div>
         
@@ -138,7 +139,7 @@ const Home = () => {
             <FadeInSection delay={0.2}>
               <div className="relative">
                 <img
-                  src="/beluga.restaurant__1752861423_3679590769352002185_74561928675.jpg"
+                  src={getAssetUrl('beluga.restaurant__1752861423_3679590769352002185_74561928675.jpg')}
                   alt="Restaurant Interior"
                   className="rounded-lg shadow-2xl"
                 />
@@ -190,7 +191,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1748541150_3643349695873120675_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1748541150_3643349695873120675_74561928675.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-ocean-500/90 to-ocean-600/90"></div>
@@ -350,7 +351,7 @@ const Home = () => {
                   className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer h-80"
                 >
                   <img
-                    src={`/${image}`}
+                    src={getAssetUrl(image)}
                     alt={`Gallery ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -378,7 +379,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('/idea2group_events_1761497996_3752039595325022057_1689092482.jpg')`,
+            backgroundImage: `url('${getAssetUrl('idea2group_events_1761497996_3752039595325022057_1689092482.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-beige-100/80 to-beige-200/80"></div>

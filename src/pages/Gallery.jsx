@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { HiX } from 'react-icons/hi'
 import { useLanguage } from '../context/LanguageContext'
+import { getAssetUrl } from '../utils/getAssetUrl'
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -69,7 +70,7 @@ const Gallery = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/beluga.restaurant__1756799562_3712626277154060394_74561928675.jpg')`,
+            backgroundImage: `url('${getAssetUrl('beluga.restaurant__1756799562_3712626277154060394_74561928675.jpg')}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
@@ -145,7 +146,7 @@ const Gallery = () => {
                   onClick={() => setSelectedImage(image)}
                 >
                   <img
-                    src={`/${image.src}`}
+                    src={getAssetUrl(image.src)}
                     alt={image.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -184,7 +185,7 @@ const Gallery = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={`/${selectedImage.src}`}
+                src={getAssetUrl(selectedImage.src)}
                 alt={selectedImage.title}
                 className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
               />
