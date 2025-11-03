@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './context/LanguageContext'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import Menu from './pages/Menu'
@@ -13,6 +14,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router basename="/beluga-restaurant">
+        <ScrollToTop />
         <div className="min-h-screen bg-beige-50">
           <Navigation />
           <Routes>
