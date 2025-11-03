@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { useLanguage } from '../context/LanguageContext'
+import logo from '../../public/LOGO Beluga.jpg'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,7 +46,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/LOGO Beluga.jpg" 
+              src={logo} 
               alt="Beluga Logo" 
               className="h-12 w-12 object-cover rounded-full"
             />

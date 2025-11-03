@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { FaFacebook, FaInstagram, FaTripadvisor } from 'react-icons/fa'
 import { HiLocationMarker, HiPhone, HiMail } from 'react-icons/hi'
 import { useLanguage } from '../context/LanguageContext'
+import logo from '../../public/LOGO Beluga.jpg'
 
 const Footer = () => {
   const { t } = useLanguage()
@@ -14,7 +15,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/LOGO Beluga.jpg" 
+                src={logo} 
                 alt="Beluga Logo" 
                 className="h-12 w-12 object-cover rounded-full"
               />
