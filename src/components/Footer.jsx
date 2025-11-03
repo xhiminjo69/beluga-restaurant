@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { FaFacebook, FaInstagram, FaTripadvisor } from 'react-icons/fa'
 import { HiLocationMarker, HiPhone, HiMail } from 'react-icons/hi'
 import { useLanguage } from '../context/LanguageContext'
-import logo from '../../public/LOGO Beluga.jpg'
+import logo from '/LOGO Beluga.jpg'
 
 const Footer = () => {
   const { t } = useLanguage()

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { useLanguage } from '../context/LanguageContext'
-import logo from '../../public/LOGO Beluga.jpg'
+import logo from '/LOGO Beluga.jpg'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
