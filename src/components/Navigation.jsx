@@ -41,19 +41,19 @@ const Navigation = () => {
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center z-50">
             <img 
               src={logo} 
               alt="Beluga Logo" 
-              className="h-12 w-12 object-cover rounded-full"
+              className="h-10 w-10 sm:h-12 sm:w-12 object-cover rounded-full"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -99,9 +99,10 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden text-3xl ${
+            className={`lg:hidden text-3xl z-50 p-2 -mr-2 ${
               isScrolled ? 'text-gray-800' : 'text-white'
             }`}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <HiX /> : <HiMenu />}
           </button>
@@ -114,18 +115,18 @@ const Navigation = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t border-gray-200"
+              className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
             >
-              <div className="py-4 space-y-4">
+              <div className="py-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-4 py-2 font-medium ${
+                    className={`block px-4 py-3 font-medium text-base ${
                       location.pathname === link.path
-                        ? 'text-gold-500'
-                        : 'text-gray-700 hover:text-gold-500'
+                        ? 'text-gold-500 bg-gold-50'
+                        : 'text-gray-700 hover:text-gold-500 hover:bg-gray-50'
                     }`}
                   >
                     {link.label}
@@ -135,12 +136,12 @@ const Navigation = () => {
                 <Link
                   to="/reservation"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block mx-4 bg-gold-500 hover:bg-gold-600 text-white px-6 py-2 rounded-full font-medium text-center"
+                  className="block mx-4 mt-2 bg-gold-500 hover:bg-gold-600 text-white px-6 py-3 rounded-full font-medium text-center text-base"
                 >
                   {t('nav.reservation')}
                 </Link>
 
-                <div className="flex items-center justify-center space-x-4 px-4 pt-2">
+                <div className="flex items-center justify-center space-x-4 px-4 pt-4 pb-2">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
