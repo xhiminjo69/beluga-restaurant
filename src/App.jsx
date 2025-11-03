@@ -12,7 +12,7 @@ import Reservation from './pages/Reservation'
 function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename="/beluga-restaurant">
         <div className="min-h-screen bg-beige-50">
           <Navigation />
           <Routes>
