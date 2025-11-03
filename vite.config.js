@@ -24,13 +24,6 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: true,
-    manifest: true,
-    minify: 'terser',
-    terserOptions: {
-      format: {
-        comments: false,
-      },
-    },
     rollupOptions: {
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url))
