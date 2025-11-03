@@ -5,7 +5,14 @@ import { fileURLToPath, URL } from 'node:url'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/beluga-restaurant/' : '/',
-  plugins: [react()],
+  plugins: [
+    react({
+      jsxImportSource: '@emotion/react',
+      babel: {
+        plugins: ['@emotion/babel-plugin']
+      }
+    })
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -15,8 +22,8 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
-    headers: {
-      'Content-Type': 'application/javascript'
+    fs: {
+      strict: true
     }
   },
   build: {
@@ -24,7 +31,17 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: true,
+    manifest: true,
+    minify: 'terser',
+    terserOptions: {
+      format: {
+        comments: false,
+      },
+    },
     rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url))
+      },
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
         entryFileNames: 'assets/[name]-[hash].js',
